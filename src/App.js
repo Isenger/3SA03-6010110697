@@ -3,7 +3,7 @@ import './App.css';
 import WordCard from './WordCard';
 
 
-const word = ['Heineken','Federbrau','Singha']
+const word = ['Library','Computer','Engineer']
 var item = word[Math.floor(Math.random()*word.length)];
 
 // const word = "Hello";
