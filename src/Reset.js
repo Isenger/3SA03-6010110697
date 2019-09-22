@@ -1,9 +1,20 @@
 import React, { Component } from 'react'
+import CharacterCard from "./CharacterCard";
 
 class Reset extends Component {
+
+    constructor(props){
+        super(props)
+        this.state = {
+            active: false,
+        }
+    }
    
     Reset = () => {
-        window.location.reload(false);
+        if(!this.state.active){
+            this.props.activationHandler(this.props.value)
+            this.setState({active: false})
+        }
     }
 
   render() {
