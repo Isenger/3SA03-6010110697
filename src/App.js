@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import CharacterCard from './CharacterCard';
 import WordCard from './WordCard';
+//import Surrender from './surrender';
 
 
 const word = ['Library','Computer','Engineer']

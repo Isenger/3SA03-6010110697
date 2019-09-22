@@ -5,25 +5,29 @@ import _ from 'lodash';
 const word = ['eat' , 'glad' , 'hello' , 'studio' , 'ability' , 'computer' ]; 
 
 const prepareStateFromWord = (given_word) => {
-     let word = given_word.toUpperCase()
-     let chars = _.shuffle(Array.from(word)) 
-     return { 
+    let word = given_word.toUpperCase()
+    let chars = _.shuffle(Array.from(word)) 
+    return { 
          word, 
          chars, 
          attempt: 1, 
          guess: [], 
          completed: false 
-        } 
+    } 
 }
 
 export default class WordCard extends Component {
     constructor(props){
         super(props)
-        this.state = prepareStateFromWord(word)
+        this.state = prepareStateFromWord(word[Math.floor(Math.random()*word.length)])
     }
     activationHandler = (c) =>{
         let guess = [...this.state.guess, c.toUpperCase()]
-        this.setState({guess})
+        // if(guess.length == 1){
+        //     document.getElementById('your-answer').innerHTML = `Your Answer : ${c.toUpperCase()}` 
+        // }else
+        //     document.getElementById('your-answer').innerHTML += c.toUpperCase();
+        // this.setState({guess})
 
         if(guess.length == this.state.chars.length){
             console.log('Mistake Word: '+guess.join('').toString())
@@ -31,8 +35,8 @@ export default class WordCard extends Component {
             if(guess.join('').toString() == this.state.chars.join('').toString()){
                 this.setState({guess: [], complete: true})
                 document.getElementById('result').innerHTML = `Congratulations! Or Succees`
-                //document.getElementById('newgame').style.display = "inline-block";
-                //document.getElementById('answer').style.display = "none";
+                document.getElementById('newgame').style.display = "inline-block";
+                document.getElementById('answer').style.display = "none";
                 
             }else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
