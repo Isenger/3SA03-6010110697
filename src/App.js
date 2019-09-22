@@ -35,7 +35,7 @@ class App extends Component {
        
         <div id="main">
             <h2 id="your-answer"></h2>
-            <h1 id="complete"></h1>
+            <h1 id="result"></h1>
             <h1 id="end">Attempt : 0</h1>
 
               <WordCard />

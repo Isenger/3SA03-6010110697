@@ -31,8 +31,8 @@ export default class WordCard extends Component {
 
         if(guess.length == this.state.chars.length){
             console.log('Mistake Word: '+guess.join('').toString())
-            console.log('Correct Word: '+this.state.chars.join('').toString())
-            if(guess.join('').toString() == this.state.chars.join('').toString()){
+            console.log('Correct Word: '+this.state.word)
+            if(guess.join('').toString() == this.state.word){
                 this.setState({guess: [], complete: true})
                 document.getElementById('result').innerHTML = `Congratulations!`
                 document.getElementById('newgame').style.display = "inline-block";
