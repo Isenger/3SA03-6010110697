@@ -34,18 +34,16 @@ export default class WordCard extends Component {
             console.log('Correct Word: '+this.state.chars.join('').toString())
             if(guess.join('').toString() == this.state.chars.join('').toString()){
                 this.setState({guess: [], complete: true})
-                document.getElementById('result').innerHTML = `Congratulations! Or Succees`
+                document.getElementById('result').innerHTML = `Congratulations!`
                 document.getElementById('newgame').style.display = "inline-block";
-                document.getElementById('answer').style.display = "none";
+                document.getElementById('end').style.display = "none";
                 
             }else{
                 this.setState({guess: [], attempt: this.state.attempt + 1})
                 document.getElementById('result').innerHTML = `Attempt Or Try Again: ${this.state.attempt} `
-                //document.getElementById('wordenter').innerHTML = `You click is Wrong Word: ${guess.join('').toString()} `
             }
             if(this.state.attempt == 3){
-                document.getElementById('result').innerHTML = `Game Over! So RestartGame`
-                //document.getElementById('wordenter').innerHTML = `Answer is: ${this.state.chars.join('').toString()}`
+                document.getElementById('result').innerHTML = `Game Over!`
                 setTimeout(() => window.location.reload(false),3000)
             }
         }

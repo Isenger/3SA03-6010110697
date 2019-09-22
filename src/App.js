@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import CharacterCard from './CharacterCard';
 import WordCard from './WordCard';
 import Reset from './Reset';
-
 
 // const word = "Hello";
 class App extends Component {
@@ -27,7 +25,7 @@ class App extends Component {
   }
 
   getAnswer = (answer) => {
-    document.getElementById('complete').innerHTML = `Answer : ${answer}`;
+    document.getElementById('result').innerHTML = `Answer : ${answer}`;
   }
 
   render() {
@@ -38,8 +36,8 @@ class App extends Component {
         <div id="main">
             <h2 id="your-answer"></h2>
             <h1 id="complete"></h1>
-            <h1 id="nod">Attempt : 0</h1>
-            
+            <h1 id="end">Attempt : 0</h1>
+
               <WordCard />
               <Reset getReset = {this.getReset}/>
             

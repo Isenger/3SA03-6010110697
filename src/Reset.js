@@ -11,7 +11,7 @@ class Reset extends Component {
   render() {
     return (
       <React.Fragment>
-        <button id="reset" class="button"  onClick={this.reset}>RESET</button>
+        <button id = "reset" class="button" onClick = {this.reset}>RESET</button>
       </React.Fragment>
     )
   }
