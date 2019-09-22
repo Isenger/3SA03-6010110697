@@ -2,18 +2,34 @@ import React, { Component } from 'react';
 import './App.css';
 import CharacterCard from './CharacterCard';
 import WordCard from './WordCard';
-//import Surrender from './surrender';
+import Reset from './Reset';
 
-
-const word = ['Library','Computer','Engineer']
-var item = word[Math.floor(Math.random()*word.length)];
 
 // const word = "Hello";
 class App extends Component {
 
+  constructor() {
+    super()
+    this.state = {
+      ResetConfirm: false,
+    };
+    
+  }
+
   newgame = () => {
     window.location.reload(false);
   }
+
+  getReset = (Reset) => {
+    if(Reset){
+      this.setState({ResetConfirm:true});
+    }
+  }
+
+  // getAnswer = (answer) => {
+  //   document.getElementById('complete').innerHTML = `Answer : ${answer}`;
+  // }
+
   render() {
     return (
       <div className= "App">
