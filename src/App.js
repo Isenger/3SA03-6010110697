@@ -26,9 +26,9 @@ class App extends Component {
     }
   }
 
-  // getAnswer = (answer) => {
-  //   document.getElementById('complete').innerHTML = `Answer : ${answer}`;
-  // }
+  getAnswer = (answer) => {
+    document.getElementById('complete').innerHTML = `Answer : ${answer}`;
+  }
 
   render() {
     return (
@@ -36,7 +36,6 @@ class App extends Component {
         <h1 id="welcome">Welcome to CardGame with React!</h1>
        
         <div id="main">
-          <h1 id="info">Try to order this word!</h1>
             <h2 id="your-answer"></h2>
             <h1 id="complete"></h1>
             <h1 id="nod">Attempt : 0</h1>
@@ -45,7 +44,7 @@ class App extends Component {
             }
         </div>
         <button id="newgame" className="button" onClick={this.newgame}>NEW GAME</button>
-         <button id="reset" className = "button" onClick={this.reseet}>Reset</button>   
+        <button id="reset" className = "button" onClick={this.reseet}>Reset</button>   
         
       </div>
     );
