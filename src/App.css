@@ -38,6 +38,10 @@
   background: pink;
 }
 
+body {
+  background-color: lightblue;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -47,6 +51,6 @@
   }
 }
 
-#welcom{
+#welcome{
   background-color:red; 
 }
