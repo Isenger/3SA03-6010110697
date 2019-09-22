@@ -19,7 +19,7 @@ const prepareStateFromWord = (given_word) => {
 export default class WordCard extends Component {
     constructor(props){
         super(props)
-        this.state = prepareStateFromWord(word[Math.floor(Math.random()*word.length)])
+        this.state = prepareStateFromWord(word[0])
     }
     activationHandler = (c) =>{
         let guess = [...this.state.guess, c.toUpperCase()]
@@ -56,7 +56,7 @@ export default class WordCard extends Component {
         }
         return (
             <div>
-                { Array.from(this.props.value).map((c, i) =><CharacterCard value={c} key={i} activationHandler={this.activationHandler}/>) }
+                { Array.from(this.state.chars.join('').toString()).map((c, i) =><CharacterCard value={c} key={i} activationHandler={this.activationHandler}/>) }
             </div>
         );
     }

@@ -4,7 +4,7 @@ class Reset extends Component {
    
     Reset = () => {
             document.getElementById('newgame').style.display = "inline-block";
-            document.getElementById('Reset').style.display = "none";
+            document.getElementById('reset').style.display = "none";
             this.props.getReset(true);
     }
 
@@ -16,5 +16,4 @@ class Reset extends Component {
     )
   }
 }
-
 export default Reset
