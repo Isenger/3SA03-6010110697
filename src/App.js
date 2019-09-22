@@ -32,15 +32,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className= "App">
-        <h1 className="welcom"> Let To Play Game</h1>
-
-        <WordCard value={item.toUpperCase()}/>
-        <h1 id="result"></h1>
-        <button id="newgame" className="button" onClick={this.newgame}>New Game</button>
+      <div className="App">
+        <h1 id="welcome">Welcome to CardGame with React!</h1>
+       
+        <div id="main">
+          <h1 id="info">Try to order this word!</h1>
+            <h2 id="your-answer"></h2>
+            <h1 id="complete"></h1>
+            <h1 id="nod">Attempt : 0</h1>
+            {
+              <Reset getReset = {this.getReset}/>
+            }
+        </div>
+        <button id="newgame" className="button" onClick={this.newgame}>NEW GAME</button>
+         <button id="reset" className = "button" onClick={this.reseet}>Reset</button>   
+        
       </div>
     );
-
   }
 }
 export default App;
